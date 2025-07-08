@@ -67,33 +67,6 @@ sudo apt update
 sudo apt install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
 ```
 
-### Configure Docker for LXC
-
-**Step 4: Create Docker daemon configuration**
-```bash
-sudo nano /etc/docker/daemon.json
-```
-
-Add the following content:
-```json
-{
-  "storage-driver": "vfs",
-  "log-driver": "json-file",
-  "log-opts": {
-    "max-size": "10m",
-    "max-file": "3"
-  }
-}
-```
-
-**Step 5: Enable and start Docker**
-```bash
-sudo systemctl enable docker
-sudo systemctl start docker
-sudo usermod -aG docker ${USER}
-```
-
-**Important**: Log out and back in to apply group changes.
 
 **Step 6: Verify installation**
 ```bash
