@@ -68,7 +68,7 @@ sudo apt install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
 ```
 
 
-**Step 6: Verify installation**
+**Step 4: Verify installation**
 ```bash
 docker --version
 docker compose version
