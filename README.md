@@ -93,7 +93,7 @@ cd searxng-docker
 sudo nano .env
 ```
 
-Add the following content:
+Add the following content. Change IPs to your environment:
 ```bash
 SEARXNG_BASE_URL=http://10.1.20.139:8080/
 SEARXNG_HOSTNAME=10.1.20.139:8080
@@ -174,7 +174,7 @@ use_default_settings: true
 server:
   bind_address: "0.0.0.0:8080"
   # base_url is defined in the SEARXNG_BASE_URL environment variable, see .env and docker-compose.yml
-  secret_key: "4513e306ea5b5136b2bfa279cbc89c5061bf15d0e8bb57916766abed3e4fc0b6"  # change this!
+  secret_key: "4513e306ea5b2b8bb57916766abed3e4fc0b6fa2061bf15d0e"  # change this!
   limiter: false  # enable this when running the instance for a public usage on the internet
   image_proxy: true
 ui:
@@ -193,7 +193,7 @@ search:
 openssl rand -hex 32
 
 # Replace the secret_key in settings.yml with the generated key
-sudo sed -i "s|4513e306ea5b5136b2bfa279cbc89c5061bf15d0e8bb57916766abed3e4fc0b6|$(openssl rand -hex 32)|g" searxng/settings.yml
+sudo sed -i "s|4513e306ea5b5136b2bfa279cbc579164fc0b6|$(openssl rand -hex 32)|g" searxng/settings.yml
 ```
 
 ### Start SearXNG
